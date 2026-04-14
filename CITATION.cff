@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code or data pipeline, please cite as below."
+authors:
+  - family-names: "Molnar"
+    given-names: "Darin R."
+    orcid: "https://orcid.org/[YOUR-ORCID]"
+title: "Demanding Strongmen: Replication Archive"
+version: "1.0.0"
+date-released: 2026-04-06
+url: "https://github.com/DrDMo/demanding-strongmen-book"
+license: CC-BY-4.0
+keywords:
+  - authoritarian governance preference
+  - democratic backsliding
+  - autocratization
+  - World Values Survey
+  - European Values Study
+  - V-Dem
+  - comparative politics
+  - survey measurement
+  - alignment CFA
+preferred-citation:
+  type: book
+  authors:
+    - family-names: "Molnar"
+      given-names: "Darin R."
+  title: "Demanding Strongmen: The Demand-Side Origins of Democratic Backsliding"
+  year: forthcoming
+  publisher: "[Publisher TBD]"

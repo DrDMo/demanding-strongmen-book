@@ -1,0 +1,6 @@
+spec,n_obs,n_events,agp_coef,agp_se,agp_pval,agp_or,converged
+M1_primary,325,48,0.6564,0.1764,0.0002,1.9279,True
+M2_wave_FE,325,48,0.6954,0.1832,0.0001,2.0046,True
+M3_lagged,220,38,0.6597,0.1984,0.0009,1.9341,True
+M4_excl_w3,273,44,0.6329,0.1908,0.0009,1.8831,True
+M5_excl_w7,239,27,0.6235,0.2238,0.0053,1.8655,True

@@ -1,0 +1,45 @@
+# Large raw data files — use Git LFS or keep locally
+*.sav
+*.zsav
+*.dta
+*.por
+
+# Parquet files — too large for standard git; use LFS or exclude
+# Uncomment the line below to exclude parquets from git entirely:
+# *.parquet
+
+# Raw data folders — do not commit raw source files directly
+data/raw/wvs_trend/*.sav
+data/raw/evs_trend/*.sav
+data/raw/vdem_cy/*.csv
+data/raw/vdem_ert/*.csv
+data/raw/wvs_wave7/*.sav
+data/raw/evs_wvs_joint/*.sav
+data/raw/zips/
+
+# Codebook PDFs (too large for git; available from original sources)
+data/raw/codebooks/*.pdf
+data/raw/codebooks/*.xls
+
+# OS and editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+env/
+*.egg-info/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Analysis outputs (regeneratable from code)
+# results/ is tracked — figures and tables go in version control once finalized
