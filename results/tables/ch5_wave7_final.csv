@@ -1,0 +1,20 @@
+model,predictor,coef,se,pval,n,ngroups
+M1_main,Intercept,2.0666,0.0405,0.0,49767,64
+M1_main,emancip_z,-0.0872,0.0025,0.0,49767,64
+M1_main,insecurity_z,-0.0083,0.0027,0.002,49767,64
+M1_main,inst_trust_z,0.0251,0.0025,0.0,49767,64
+M1_main,male,-0.0467,0.0049,0.0,49767,64
+M1_main,age_z,-0.0815,0.0027,0.0,49767,64
+M1_main,edu_z,-0.0828,0.0026,0.0,49767,64
+M1_main,income_z,0.0079,0.0027,0.0037,49767,64
+M1_main,Group Var,0.3558,0.0631,0.0,49767,64
+M2_interact,Intercept,2.0666,0.0405,0.0,49767,64
+M2_interact,emancip_z,-0.0872,0.0025,0.0,49767,64
+M2_interact,insecurity_z,-0.0083,0.0027,0.002,49767,64
+M2_interact,emancip_z:insecurity_z,0.0014,0.0025,0.5707,49767,64
+M2_interact,inst_trust_z,0.0251,0.0025,0.0,49767,64
+M2_interact,male,-0.0467,0.0049,0.0,49767,64
+M2_interact,age_z,-0.0815,0.0027,0.0,49767,64
+M2_interact,edu_z,-0.0828,0.0026,0.0,49767,64
+M2_interact,income_z,0.0078,0.0027,0.0038,49767,64
+M2_interact,Group Var,0.3558,0.0631,0.0,49767,64
