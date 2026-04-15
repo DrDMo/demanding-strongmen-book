@@ -2,7 +2,7 @@
 
 Replication code and processed data for:
 
-> Molnar, D. R. (*forthcoming*). *Demanding Strongmen: Values, Insecurity, and the Global Dynamics of Authoritarianism*. [Publisher TBD].
+> Molnar, D. R. (*forthcoming*). *Demanding Strongmen: Values, Insecurity, and the Global Dynamics of Authoritarianism*. Shoreline Publishing Group.
 
 ---
 
@@ -104,6 +104,6 @@ Data: Subject to the respective data archive terms of use. See `docs/data_source
   author    = {Molnar, Darin R.},
   title     = {Demanding Strongmen: Values, Insecurity, and the Global Dynamics of Authoritarianism},
   year      = {forthcoming},
-  publisher = {[Publisher TBD]}
+  publisher = {Shoreline Publishing Group}
 }
 ```
