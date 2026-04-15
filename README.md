@@ -2,7 +2,7 @@
 
 Replication code and processed data for:
 
-> Molnar, D. R. (*forthcoming*). *Demanding Strongmen: The Demand-Side Origins of Democratic Backsliding*. [Publisher TBD].
+> Molnar, D. R. (*forthcoming*). *Demanding Strongmen: Values, Insecurity, and the Global Dynamics of Authoritarianism*. [Publisher TBD].
 
 ---
 
@@ -102,7 +102,7 @@ Data: Subject to the respective data archive terms of use. See `docs/data_source
 ```
 @book{molnar_forthcoming,
   author    = {Molnar, Darin R.},
-  title     = {Demanding Strongmen: The Demand-Side Origins of Democratic Backsliding},
+  title     = {Demanding Strongmen: Values, Insecurity, and the Global Dynamics of Authoritarianism},
   year      = {forthcoming},
   publisher = {[Publisher TBD]}
 }
