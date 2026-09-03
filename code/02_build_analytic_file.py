@@ -136,11 +136,26 @@ def merge_individual(wvs_df, evs_df):
     print(f"  EVS rows dropped (WVS overlap): {n_dropped:,}")
     print(f"  EVS rows retained (unique): {len(evs_unique):,}")
 
-    # Find common columns for concat
-    common_cols = list(set(wvs_df.columns) & set(evs_unique.columns))
+    # Columns common to both files, PLUS analysis variables that exist in only
+    # one of them. The plain intersection silently dropped every WVS-only
+    # variable -- including X047_WVS, the income item that Chapter 5's
+    # insecurity measure depends on -- which left that measure undefined for
+    # every wave except those where the fallback happened to have data.
+    KEEP_EVEN_IF_NOT_COMMON = ["X047_WVS", "X047R_WVS", "X025R", "X045"]
+    common_cols = sorted(set(wvs_df.columns) & set(evs_unique.columns))
+    extra = [c for c in KEEP_EVEN_IF_NOT_COMMON
+             if c in wvs_df.columns or c in evs_unique.columns]
+    cols = common_cols + [c for c in extra if c not in common_cols]
+    for frame in (wvs_df, evs_unique):
+        for c in cols:
+            if c not in frame.columns:
+                frame[c] = np.nan
     merged = pd.concat(
-        [wvs_df[common_cols], evs_unique[common_cols]], ignore_index=True
+        [wvs_df[cols], evs_unique[cols]], ignore_index=True
     )
+    for c in extra:
+        print(f"  retained non-common analysis column {c}: "
+              f"{int(merged[c].notna().sum()):,} non-missing")
     print(f"  Merged IVS shape: {merged.shape}")
     return merged
 

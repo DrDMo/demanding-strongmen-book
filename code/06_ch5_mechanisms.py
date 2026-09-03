@@ -46,7 +46,7 @@ def build_individual_data():
     # Outcome: agp_mean (already recoded in 02)
     # ── Economic insecurity proxy: income position (X047_WVS / X046)
     income_col = None
-    for c in ["X047_WVS", "X047", "X046"]:
+    for c in ["X047_WVS", "X047", "X046", "X045"]:
         if c in ivs.columns and ivs[c].notna().sum() > 1000:
             income_col = c
             break
@@ -55,7 +55,7 @@ def build_individual_data():
         ivs["insecurity"] = -1 * ivs[income_col]  # low income = high insecurity
         # Standardise within wave × country
         ivs["insecurity"] = ivs.groupby(["country_num", "wave_chron"])["insecurity"].transform(
-            lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0
+            lambda x: (x - x.mean()) / x.std() if x.std(skipna=True) > 0 else np.nan
         )
     else:
         ivs["insecurity"] = np.nan
@@ -71,7 +71,7 @@ def build_individual_data():
             trust_raw[col] = 5 - trust_raw[col]
         ivs["inst_trust"] = trust_raw.mean(axis=1, skipna=True)
         ivs["inst_trust"] = ivs.groupby(["country_num", "wave_chron"])["inst_trust"].transform(
-            lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0
+            lambda x: (x - x.mean()) / x.std() if x.std(skipna=True) > 0 else np.nan
         )
     else:
         ivs["inst_trust"] = np.nan
@@ -87,7 +87,7 @@ def build_individual_data():
     if ev_col:
         ivs["emancipative_vals"] = ivs[ev_col]
         ivs["emancipative_vals"] = ivs.groupby(["country_num", "wave_chron"])["emancipative_vals"].transform(
-            lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0
+            lambda x: (x - x.mean()) / x.std() if x.std(skipna=True) > 0 else np.nan
         )
     else:
         ivs["emancipative_vals"] = np.nan
@@ -105,10 +105,12 @@ def build_individual_data():
     else:
         ivs["age"] = np.nan
 
-    if "X025" in ivs.columns:
-        ivs["edu"] = ivs["X025"]
+    edu_col = next((c for c in ["X025R", "X025"]
+                    if c in ivs.columns and ivs[c].notna().sum() > 1000), None)
+    if edu_col:
+        ivs["edu"] = ivs[edu_col]
         ivs["edu"] = ivs.groupby(["country_num", "wave_chron"])["edu"].transform(
-            lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0
+            lambda x: (x - x.mean()) / x.std() if x.std(skipna=True) > 0 else np.nan
         )
     else:
         ivs["edu"] = np.nan
@@ -127,8 +129,28 @@ def build_individual_data():
     return sample
 
 
+
+def assert_usable(df, cols, where):
+    """Fail loudly rather than fit a model on a constant.
+
+    Both the insecurity and the education measures were silently constant for
+    every Wave 7 respondent before this check existed, because the source
+    column was absent and the standardiser returned 0 instead of NaN.
+    """
+    for c in cols:
+        if c not in df.columns:
+            raise ValueError(f"{where}: {c} missing entirely")
+        v = df[c].dropna()
+        if v.empty:
+            raise ValueError(f"{where}: {c} has no non-missing values")
+        if float(v.std()) == 0:
+            raise ValueError(f"{where}: {c} is constant ({v.iloc[0]}) -- not a usable regressor")
+        print(f"  [check] {c}: n={len(v):,}, SD={v.std():.3f}")
+
 def run_mechanisms(sample):
     """Run H2, H3, H4 multilevel models."""
+    assert_usable(sample, ["insecurity", "inst_trust", "emancipative_vals", "edu", "age"],
+                  "Chapter 5 mechanism inputs")
     models_out = []
 
     # ── Model 1: Demographics only (baseline) ─────────────────────────────────
