@@ -92,12 +92,33 @@ Chapter 5, Wave 7, OLS with country fixed effects and SEs clustered by country
 - The trust result is unaffected: protective on the democracy item, positively
   associated with strong-leader and army-rule preferences.
 
-## Not affected
+## 3. Chapter 6 used the same-wave AGP score under a "lagged" label
 
-The Chapter 6 hazard coefficient is unchanged and reproduces exactly:
-`onset ~ agp_score`, n = 325, 48 events, β = 0.6564, SE = 0.1764, p = .0002,
-OR = 1.9279. `agp_score` is standardized, so that odds ratio is per standard
-deviation.
+`onset` is 1 when an ERT episode starts inside a wave's year window, and
+`agp_score` is measured in that same window. The chapter's equation in 6.3,
+Table 6.1's row label and H5 itself all require AGP to *precede* the onset it
+predicts, so the reported model had a simultaneity problem its own framing
+rules out.
+
+`ch6_table61.csv` now reports the lagged specification (`agp_lag1`, the previous
+wave's score). The finding holds:
+
+| model | AGP (per SD) | SE | OR | AUC |
+|---|---|---|---|---|
+| M1 AGP only | +0.638 ** | 0.199 | 1.89 | 0.672 |
+| M2 + polyarchy | +0.714 ** | 0.223 | 2.04 | 0.676 |
+| M3 + year trend | +0.782 *** | 0.228 | 2.19 | 0.703 |
+| M4 + region FE | +0.662 * | 0.260 | 1.94 | 0.739 |
+
+n = 215 country-waves, 38 onsets, 81 countries, base rate 17.7 percent.
+Requiring a prior-wave observation is what reduces the panel from 325.
+
+The same-wave model is retained in the file as `M0_contemporaneous_check`:
+n = 325, 48 events, β = 0.656, OR = 1.928 — closely comparable, which is why
+the substantive claim is unaffected by the change.
+
+`agp_score` and `agp_lag1` are both standardized, so every odds ratio here is
+per standard deviation.
 
 Chapter 4's country estimates in `ch4_wave7_country_agp.csv` were already
 correct; it was the printed Table 4.1 that disagreed with them.
