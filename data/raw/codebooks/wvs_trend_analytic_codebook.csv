@@ -1,0 +1,53 @@
+variable,label,value_labels
+S002VS,Chronology of EVS-WVS waves,1=1981-1984; 2=1989-1993; 3=1994-1998; 4=1999-2004; 5=2005-2009; 6=2010-2014; 7=2017-2022
+s002,WVS-wave,1=1981-1984; 2=1989-1993; 3=1994-1998; 4=1999-2004; 5=2005-2009; 6=2010-2014; 7=2017-2022
+S003,Country (ISO 3166-1 Numeric code),8=Albania; 12=Algeria; 20=Andorra; 31=Azerbaijan; 32=Argentina; 36=Australia; 50=Bangladesh; 51=Armenia; 68=Bolivia; 70=
+COUNTRY_ALPHA,ISO 3166-1 alpha-3 country code,
+COW_NUM,Country (CoW Numeric code),2=United States of America; 6=Puerto Rico; 20=Canada; 41=Haiti; 42=Dominican Republic; 52=Trinidad and Tobago; 70=Mexico
+S020,Year survey,1981=1981; 1982=1982; 1984=1984; 1989=1989; 1990=1990; 1991=1991; 1995=1995; 1996=1996; 1997=1997; 1998=1998; 1999=1999;
+S017,Weight,1=No weighting
+S018,Equilibrated weight-1000,
+pwgt,Population size weight,
+E114,Political system: Having a strong leader,1=Very good; 2=Fairly good; 3=Bad; 4=Very bad
+E115,Political system: Having experts make decisions,1=Very good; 2=Fairly good; 3=Fairly bad; 4=Very bad
+E116,Political system: Having the army rule,1=Very good; 2=Fairly good; 3=Fairly bad; 4=Very bad
+E117,Political system: Having a democratic political system,1=Very good; 2=Fairly good; 3=Fairly bad; 4=Very bad
+E118,Firm party leader vs. Cooperating party leader,1=Firm party leader; 2=Cooperative party leader
+E119,Government order vs. freedom,1=To maintain order in society; 2=To respect freedom of the individual
+E120,"In democracy, the economic system runs badly",1=Agree strongly; 2=Agree; 3=Disagree; 4=Strongly disagree
+E121,Democracies are indecisive and have too much squabbling,1=Agree strongly; 2=Agree; 3=Disagree; 4=Strongly disagree
+E122,Democracies aren´t good at maintaining order,1=Agree strongly; 2=Agree; 3=Disagree; 4=Strongly disagree
+E123,Democracy may have problems but is better,1=Agree strongly; 2=Agree; 3=Disagree; 4=Strongly disagree
+E236,Democraticness in own country,1=Not at all democratic; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9; 10=Completely democratic
+E069_01,Confidence: Churches,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_02,Confidence: Armed Forces,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_06,Confidence: The Police,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_07,Confidence: Parliament,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_11,Confidence: The Government,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_12,Confidence: The Political Parties,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+E069_17,Confidence: Justice System/Courts,1=A great deal; 2=Quite a lot; 3=Not very much; 4=None at all
+A165,Most people can be trusted,1=Most people can be trusted; 2=Need to be very careful
+E023,Interest in politics,1=Very interested; 2=Somewhat interested; 3=Not very interested; 4=Not at all interested
+E025,Political action: signing a petition,1=Have done; 2=Might do; 3=Would never do
+E026,Political action: joining in boycotts,1=Have done; 2=Might do; 3=Would never do
+E027,Political action: attending lawful/peaceful demonstrations,1=Have done; 2=Might do; 3=Would never do
+E028,Political action: joining unofficial strikes,1=Have done; 2=Might do; 3=Would never do
+Y002,Post-Materialist index 4-item,1=Materialist; 2=Mixed; 3=Postmaterialist
+Y003,Autonomy Index,"0=0; 1=1; 2=Determination, perseverance/Independence"
+X001,Sex,1=Male; 2=Female
+X003,Age,
+X003R,Age recoded,1=15-24; 2=25-34; 3=35-44; 4=45-54; 5=55-64; 6=65 and more years
+X007,Marital status,1=Married; 2=Living together as married; 3=Divorced; 4=Separated; 5=Widowed; 6=Single/Never married
+X025,Educational level respondent: 8 categories,1=Inadequately completed elementary education; 2=Completed (compulsory) elementary education; 3=Incomplete secondary sch
+X025R,Educational level respondent: recoded,1=Lower; 2=Middle; 3=Upper
+X028,Employment status,1=Full time; 2=Part time; 3=Self employed; 4=Retired; 5=Housewife; 6=Students; 7=Unemployed; 8=Other
+X045,Social class (subjective),1=Upper class; 2=Upper middle class; 3=Lower middle class; 4=Working class; 5=Lower class
+X046,Socio-economic status of respondent,"1=AB Upper/Upper middle class; 2=C1 Middle, no manual workers; 3=C2 Middle, manual workers; 4=DE Manual workers/Unskille"
+X047_WVS,Scale of incomes,1=Lower step; 2=second step; 3=Third step; 4=Fourth step; 5=Fifth step; 6=Sixth step; 7=Seventh step; 8=Eigth step; 9=Ni
+X047R_WVS,Subjective income level (recoded in 3 groups),1=Low; 2=Medium; 3=High
+E033,Self positioning in political scale,1=Left; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9; 10=Right
+F034,Religious person,1=A religious person; 2=Not a religious person; 3=A convinced atheist
+F063,How important is God in your life,1=Not at all important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9; 10=Very important
+G007_01,Trust: Other people in country,1=Trust completely; 2=Trust a little; 3=Neither trust or distrust; 4=Not trust very much; 5=Not trust at all
+G007_35_B,Trust: People of another religion (B),1=Trust completely; 2=Trust somewhat; 3=Do not trust very much; 4=Do not trust at all
+G007_36_B,Trust: People of another nationality (B),1=Trust completely; 2=Trust somewhat; 3=Do not trust very much; 4=Do not trust at all
