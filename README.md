@@ -79,17 +79,26 @@ pip install -r requirements.txt
 
 ### Execution Order
 
-Run scripts in numerical order. Scripts 00–02 transform raw data into the analytic dataset. Scripts 03–04 interface with Mplus (required separately; not open-source) for alignment CFA. Scripts 05–09 produce all chapter-specific results.
+Run scripts in numerical order. Scripts 00–02 transform raw data into the analytic dataset. Script 03 writes the Mplus alignment syntax to `docs/mplus_alignment/`; run each `.inp` file in Mplus (required separately; not open-source), then script 04 reads the alignment output. Scripts 05–10 produce the chapter results.
 
 ```bash
 python code/00_convert_spss.py
 python code/01_inspect_data.py
 python code/02_build_analytic_file.py
-# [run Mplus using syntax in docs/mplus_alignment/]
+python code/03_agp_alignment_prep.py
+# run each docs/mplus_alignment/*.inp in Mplus
 python code/04_agp_scores.py
 python code/05_ch4_cross_national.py
-# ... etc.
+python code/06_ch5_mechanisms.py
+python code/07_ch6_hazard_models.py
+python code/08_ch7_forecasting.py
+python code/09_ch8_ebb.py
+python code/10_ch9_robustness.py
 ```
+
+### Online Appendix
+
+Chapter 9 refers to a consolidated robustness table in the online appendix. It is `results/tables/ch9_robustness_all.csv` (every specification, with AGP coefficient, standard error, p-value, and odds ratio), summarized by category in `results/tables/ch9_robustness_summary.csv`. Both are written by `code/10_ch9_robustness.py`.
 
 ## License
 

@@ -93,7 +93,7 @@ https://doi.org/10.23696/vdemds24
 
 ## 6. V-Dem Episodes of Regime Transformation (ERT) v16
 
-**File:** `ERT_dataset_v16.csv` (or .xlsx)
+**File:** `ERT_dataset_v16.csv` (or .xlsx); save the CSV as `ert.csv`, the name the scripts read
 
 **Download:** https://www.v-dem.net/data/dataset-archive/
 - Select "Episodes of Regime Transformation" → v16
